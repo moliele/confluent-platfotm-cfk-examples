@@ -3,8 +3,6 @@
 ### ⚠️ IMPORTANT: PRODUCTION DISCLAIMER
 > **DISCLAIMER:** This repository and the configurations it contains are intended solely for educational and laboratory purposes. It is a simplified example designed to demonstrate the integration of mTLS and LDAP. It is not suitable for use in production environments. Before deploying it in a production environment, ensure you implement robust secret management, enterprise-grade Certificate Authority (CA) certificate rotation, and rigorous security hardening measures.
 
-Translated with DeepL.com (free version)
-
 ---
 
 ## 🚀 Overview
@@ -420,7 +418,7 @@ spec:
       - listener.name.replication.ssl.truststore.password=${file:/mnt/sslcerts/jksPassword.txt:jksPassword}
       - listener.security.protocol.map=CONTROLLER:SSL,REPLICATION:SSL
       - confluent.security.event.logger.enable=false
-      #mTLS para clientes internos
+      # mTLS internal clients 
       - confluent.metadata.ssl.keystore.location=/mnt/sslcerts/keystore.p12
       - confluent.metadata.ssl.keystore.password=${file:/mnt/sslcerts/jksPassword.txt:jksPassword}
       - confluent.metadata.ssl.key.password=${file:/mnt/sslcerts/jksPassword.txt:jksPassword}
