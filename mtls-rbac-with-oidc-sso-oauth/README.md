@@ -344,25 +344,6 @@ kafka-topics --bootstrap-server kafka.confluent.svc.cluster.local:9094 \
   --command-config ~/conf/admin.properties --list
 ```
 
----
-
-## Script reference
-
-| Step | Script | Manual? |
-|---|---|---|
-| 1 – Install dependencies | `sudo ./01-install-deps.sh` | |
-| 2 – Create cluster | `./02-setup-cluster.sh` + export vars | |
-| 3 – Prepare manifests | — | yes (vi) |
-| 4 – Deploy Samba AD | `./03-deploy-samba.sh` | |
-| 5 – Deploy operator + Keycloak | `./04-deploy-keycloak.sh` | |
-| 6 – Federate Keycloak to AD | — | yes (UI) |
-| 7 – Create OAuth SA group | `./05-keycloak-sa-group.sh` | |
-| 8 – Certs + secrets | `./06-generate-certs-secrets.sh` | |
-| 9 – Deploy platform | `./07-deploy-platform.sh` | |
-| 10.2 – Recreate admin-client | `./08-recreate-admin-client.sh` | |
-
----
-
 ## Sources
 
 - [Security setup](https://github.com/confluentinc/confluent-kubernetes-examples/blob/master/security/mtls-rbac-with-sso-oauth/README.md)
